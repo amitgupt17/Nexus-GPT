@@ -1,0 +1,77 @@
+
+.form-container {
+  background-color: #1E293B;
+  width: 100%;
+  max-width: 400px;
+  margin: auto; 
+  padding: 2.5rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4);
+}
+.form-container form div {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.form-container label {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: #94A3B8;
+}
+
+.form-container input {
+  padding: 0.75rem;
+  background-color: #0F172A;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: #F8FAFC;
+  font-size: 1rem;
+}
+
+.form-container input:focus {
+  outline: none;
+  border-color: #38BDF8; 
+}
+
+.form-container button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #38BDF8;
+  color: #0F172A;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+.google-btn-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    
+}
+
+.form-container h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #F8FAFC;
+}
+
+.form-container span {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #94A3B8;
+}
+
+.form-container span a {
+    color: #38BDF8;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.form-container span a:hover {
+    text-decoration: underline;
+}

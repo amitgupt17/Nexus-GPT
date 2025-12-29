@@ -1,0 +1,44 @@
+.chats {
+    width: 86%;
+    max-width: 680px;
+    overflow-y: scroll;
+    padding: 2rem 1rem;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+.userDiv {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 0.9rem;
+}
+.gptDiv {
+    text-align: left;
+    font-size: 0.9rem;
+}
+.userMessage {
+    background-color: #334155; 
+    border-radius: 18px 18px 4px 18px;
+    padding: 12px 18px;
+    max-width: 75%;
+    width: fit-content;
+    word-wrap: break-word;
+    line-height: 1.5;
+}
+.hljs{
+    border-radius: 14px !important;
+
+}
+pre {
+    white-space: pre-wrap;
+   
+}
+@media screen and (max-width: 1000px) {
+    .chats{
+        max-width: 78%;
+        padding-top: 80px;
+    }
+    .userMessage{
+        max-width: 70% !important;
+    }
+}

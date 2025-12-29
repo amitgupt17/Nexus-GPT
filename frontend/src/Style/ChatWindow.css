@@ -1,0 +1,178 @@
+.chatWindow {
+    background-color:#0F172A ;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navbar span {
+    margin: 0.9rem 1rem;
+}
+.userIcon {
+    background-color: #339cff;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.chatInput {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.inputBox {
+    width: 100%;
+    position: relative;
+    max-width: 690px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+input {
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: #1E293B; 
+    color: #F8FAFC;
+    padding: 18px 50px 18px 20px;
+    font-size: 0.9rem;
+    border-radius: 14px;
+}
+input:focus {
+    outline: none;
+}
+#submit {
+    cursor: pointer;
+    height: 35px;
+    width: 35px;
+    font-size: 20px;
+    position: absolute;
+    right: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#submit i {
+    color: #38BDF8; 
+    transition: transform 0.2s;
+}
+#submit i:hover {
+    color: #7DD3FC;
+    transform: scale(1.1);
+}
+.info {
+    font-size: 0.8rem;
+    padding: 0.5rem;
+    color: #b4b4b4;
+    margin: 0 2rem;
+}
+
+.name{
+    border: solid 10px transparent;
+
+   
+    
+}
+.name:hover{
+    background-color: rgba(180,180,180,0.08);
+    border-radius: 10px;
+}
+
+.dropDown {
+    position: absolute;
+    top: 4.5rem;
+    right: 2rem;
+    width: 180px;
+    background-color: #1E293B; 
+    padding: 0.5rem;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+    text-align: left;
+    z-index: 1000;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.3);
+}
+.dropDownItem {
+    font-size: 0.85rem;
+    color: #F8FAFC; 
+    padding: 0.6rem 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+/* Ensure the Link component matches your dropDownItem styles */
+.dropDown a.dropDownItem {
+    text-decoration: none;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Optional: Subtle separator */
+.dropDown hr {
+    border: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    margin: 4px 0;
+}
+.dropDownItem i {
+    color: #38BDF8; 
+}
+.dropDownItem:hover{
+    background-color: rgba(180,180,180,0.1);
+    border-radius: 6px;
+}
+@media screen and (max-width: 1000px) {
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 0 15px; 
+        position: relative; 
+        height: 60px;
+    }
+     .inputBox{
+        max-width: 90%;
+    }
+    .userIconDiv {
+        display: flex;
+        justify-content: flex-end;
+        flex: 1;
+        z-index: 2;
+    }
+    .name {
+       
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 0;
+        white-space: nowrap;
+        font-weight: 600;
+        /* max-width: 50%;  */
+        overflow: hidden;
+        text-overflow: ellipsis;
+        pointer-events: none;
+        z-index: 1;
+    }
+    .navbar span {
+        margin: 0; 
+    }
+    .userIcon {
+       margin: 0.5rem 1rem !important;
+       cursor: pointer;
+    }
+
+}

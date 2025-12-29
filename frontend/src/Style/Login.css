@@ -1,0 +1,107 @@
+.form_container {
+    background-color: #1E293B;
+    width: 380px;
+    margin: 80px auto;
+    padding: 2.5rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4);
+    color: #F8FAFC;
+}
+ 
+.form_container h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.form_container form div {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.2rem;
+}
+
+.form_container label {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: #94A3B8;
+}
+
+.form_container input {
+    padding: 0.8rem;
+    background-color: #0F172A; /* Slate 900 */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+
+.form_container input:focus {
+    outline: none;
+    border-color: #38BDF8; /* Sky 400 */
+}
+.form_container button[type="submit"] {
+    width: 100%;
+    padding: 0.8rem;
+    margin-top: 1rem;
+    background-color: #38BDF8;
+    color: #0F172A;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.form_container button[type="submit"]:hover {
+    background-color: #7DD3FC;
+    transform: translateY(-1px);
+}
+
+.divider-container {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 20px 0;
+    color: #94A3B8;
+    font-size: 0.8rem;
+}
+
+.divider-container::before,
+.divider-container::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.divider-container:not(:empty)::before {
+    margin-right: .75em;
+}
+
+.divider-container:not(:empty)::after {
+    margin-left: .75em;
+}
+
+.google-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.form_container span {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #94A3B8;
+}
+.form_container span a {
+    color: #38BDF8;
+    text-decoration: none;
+    font-weight: 600;
+}
+.form_container span a:hover {
+    text-decoration: underline;
+}
+
