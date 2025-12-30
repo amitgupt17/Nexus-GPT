@@ -11,10 +11,22 @@ import {googleLogin} from "./utils/GoogleAuth.js";
 
 const app =express();
 const PORT = process.env.PORT || 3000;
+const allowedOrigins = [
+  process.env.LOCAL_API_URL,            
+  process.env.PROD_API_URL   
+];
 
 app.use(
   cors({
-    origin: ["http://localhost:5173"],
+    origin: function (origin, callback) {
+      if (!origin) return callback(null, true);
+      
+      if (allowedOrigins.indexOf(origin) !== -1) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"]
