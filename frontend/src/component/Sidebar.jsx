@@ -66,7 +66,7 @@ export default function Sidebar() {
             )}
             <section className={`sidebar ${isOpen ? "open" : ""}`}>
                 <button className="button" onClick={createNewChat}>
-                    <img src="src/assets/nexuslogo.jpeg" alt="nexus-logo" className="logo" />
+                    <img src="/nexuslogo.jpeg" alt="nexus-logo" className="logo" />
                     <div className="button-right-group">
                         <span><i className="fa-solid fa-pen-to-square"></i></span>
                         <div className="mobile-toggle" onClick={(e) => {
