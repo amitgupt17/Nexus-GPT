@@ -22,7 +22,7 @@ export default function Login() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch("http://localhost:3000/login", {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/login`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(inputValue),
@@ -44,7 +44,7 @@ export default function Login() {
     };
     const onGoogleSuccess = async (credentialResponse) => {
         try {
-            const res = await fetch("http://localhost:3000/google", {
+            const res = await fetch(`${import.meta.env.VITE_API_URL}/google`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ token: credentialResponse.credential })

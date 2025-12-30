@@ -7,14 +7,13 @@ import { Route, Routes, Navigate } from "react-router-dom";
 import { Login, Signup } from "./Pages";
 import { v1 as uuidv1 } from "uuid";
 
-// 1. Protection Logic
 const ProtectedRoute = ({ children }) => {
     const token = localStorage.getItem("nexus_token");
     if (!token) return <Navigate to="/login" replace />;
     return children;
 };
 
-function App() {
+export default function App() {
     const [prompt, setPrompt] = useState("");
     const [reply, setReply] = useState(null);
     const [currThreadId, setCurrThreadId] = useState(uuidv1());
@@ -30,7 +29,6 @@ function App() {
         prevChats, setPrevChats,
         allThreads, setAllThreads,
     };
-
     return (
         <div className='app'>
             <MyContext.Provider value={providerValues}>
@@ -50,12 +48,10 @@ function App() {
                             </ProtectedRoute>
                         } 
                     />
-                    
                     <Route path="*" element={<Navigate to="/login" />} />
                 </Routes>
             </MyContext.Provider>
         </div>
     );
-}
+};
 
-export default App;

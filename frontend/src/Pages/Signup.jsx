@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
-import { GoogleLogin } from '@react-oauth/google'; // Import Google Component
+import { GoogleLogin } from '@react-oauth/google';
 import "../Style/Signup.css";
 export default function Signup() {
     const navigate = useNavigate();
@@ -21,11 +21,10 @@ export default function Signup() {
     const handleError = (err) => toast.error(err, { position: "bottom-left" });
     const handleSuccess = (msg) => toast.success(msg, { position: "bottom-right" });
 
-    // 1. Manual Signup Submit
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch("http://localhost:3000/signup", {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/signup`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(inputValue),
@@ -34,7 +33,7 @@ export default function Signup() {
             const data = await response.json();
             if (data.success) {
                 handleSuccess(data.message);
-                localStorage.setItem("nexus_token", data.token); // Save token
+                localStorage.setItem("nexus_token", data.token); 
                 setTimeout(() => navigate("/chat"), 1000);
             } else {
                 handleError(data.message);
@@ -44,11 +43,9 @@ export default function Signup() {
         }
         setInputValue({ email: "", password: "", username: "" });
     };
-
-    // 2. Google Signup Success Handler
     const onGoogleSuccess = async (credentialResponse) => {
         try {
-            const res = await fetch("http://localhost:3000/google", {
+            const res = await fetch(`${import.meta.env.VITE_API_URL}/google`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ token: credentialResponse.credential })
@@ -87,8 +84,6 @@ export default function Signup() {
                         onError={() => handleError("Google Login Failed")}
                         theme="filled_black"
                         shape="pill"
-                        // useOneTap={false} 
-                        // auto_select={false}
                     ></GoogleLogin>
                 </div>
                 <span style={{ display: "block", marginTop: "15px" }}>
@@ -98,4 +93,4 @@ export default function Signup() {
             <ToastContainer />
         </div>
     );
-}
+};
