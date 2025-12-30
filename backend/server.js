@@ -43,7 +43,7 @@ const connectDb = async() =>{
     await mongoose.connect(process.env.DBURL_API_KEY)
     console.log("db was connected");
   } catch(e){
-    console("failed to connect with DB",err);
+    console("failed to connect with DB",e);
   };
 };
 app.listen(PORT,()=>{
