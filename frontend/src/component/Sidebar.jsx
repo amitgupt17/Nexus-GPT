@@ -1,6 +1,7 @@
 import { MyContext } from "../MyContext";
 import "../Style/Sidebar.css";
 import { useContext, useEffect, useState } from "react";
+import myLogo from '../assets/nexuslogo.jpeg';
 import { v1 as uuidv1 } from "uuid";
 export default function Sidebar() {
     const { allThreads, setAllThreads, currThreadId, setNewChat, setPrompt, setReply, setCurrThreadId, setPrevChats } = useContext(MyContext);
@@ -66,7 +67,7 @@ export default function Sidebar() {
             )}
             <section className={`sidebar ${isOpen ? "open" : ""}`}>
                 <button className="button" onClick={createNewChat}>
-                    <img src="/nexuslogo.jpeg" alt="nexus-logo" className="logo" />
+                    <img src={myLogo} alt="nexus-logo" className="logo" />
                     <div className="button-right-group">
                         <span><i className="fa-solid fa-pen-to-square"></i></span>
                         <div className="mobile-toggle" onClick={(e) => {
